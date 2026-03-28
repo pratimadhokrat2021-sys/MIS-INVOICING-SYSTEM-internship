@@ -1,15 +1,18 @@
 
 # MIS & Invoicing System – Internship Project
 
-## Description
-This project is developed as part of an internship program.
-The system helps manage clients, estimates, invoices, and payments.
+## Module: Group Management
 
-## Technology Stack
-- Backend: Spring Boot, Java
+### Features Implemented
+- Add Group
+- View Active Groups
+- Group name uniqueness validation
+- Soft delete concept (is_active)
+
+### Tech Stack
+- Backend: Spring Boot
 - Database: MySQL
-- Frontend: React / Bootstrap
-- Version Control: GitHub
+- Frontend: HTML + JavaScript
 
-## Internship Progress
-- Day 1: Project understanding, environment setup, GitHub repository created
+### Internship Progress
+- Day 2: Group Management (Add & View) implemented
