@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Management</title>
+</head>
+<body>
+
+<h2>Login</h2>
+<input id="email" placeholder="Email">
+<input id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<h2>Add Group</h2>
+<input id="groupName" placeholder="Group Name">
+<button onclick="addGroup()">Add Group</button>
+
+<h3>Group List</h3>
+<ul id="groupList"></ul>
+
+<script>
+const API = "http://localhost:8080/api";
+
+function login() {
+    fetch(API + "/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        })
+    })
+    .then(res => res.text())
+    .then(alert);
+}
+
+function addGroup() {
+    fetch(API + "/group", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            groupName: document.getElementById("groupName").value
+        })
+    })
+    .then(res => res.text())
+    .then(msg => {
+        alert(msg);
+        loadGroups();
+    });
+}
+
+function loadGroups() {
+    fetch(API + "/group")
+    .then(res => res.json())
+    .then(data => {
+        let html = "";
+        data.forEach(g => {
+            html += "<li>" + g.groupName + "</li>";
+        });
+        document.getElementById("groupList").innerHTML = html;
+    });
+}
+
+loadGroups();
+</script>
+
+</body>
+</html>
