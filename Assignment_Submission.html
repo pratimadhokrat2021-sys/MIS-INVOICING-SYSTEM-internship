@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Submission: User Authentication Module</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .header {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Assignment Submission</h1>
+        <h2>Code-B IMS: User Authentication Module</h2>
+        <p><strong>Submitted by:</strong> [Replace with your Name]</p>
+    </div>
+
+    <div class="highlight-box">
+        <h3>1. GitHub Repository Link</h3>
+        <p><strong>Link:</strong> <a href="#">[REPLACE WITH YOUR GITHUB REPO LINK HERE]</a></p>
+    </div>
+
+    <div class="highlight-box">
+        <h3>2. URL of Module Hosted on Free Server</h3>
+        <p><strong>Frontend URL:</strong> <a href="#">[REPLACE WITH VERCEL/NETLIFY LINK HERE]</a></p>
+        <p><strong>Backend API URL:</strong> <a href="#">[REPLACE WITH RENDER/RAILWAY LINK HERE]</a></p>
+    </div>
+
+    <hr>
+
+    <h2>3. End User Documentation</h2>
+
+    <h3>System Overview</h3>
+    <p>The CodeB Internal Management System (IMS) provides secure Role-Based Access Control (RBAC) via JSON Web Tokens (JWT). The system currently features two main user roles for the authentication module:</p>
+    <ul>
+        <li><strong>Admin</strong>: Full system control over users and modules.</li>
+        <li><strong>Sales Person</strong>: Restricted features and invoicing dashboard.</li>
+    </ul>
+
+    <h3>Requirements Met</h3>
+    <ul>
+        <li><strong>Backend</strong>: Spring Boot 3.x REST API, MySQL Database (Tables implemented: User, Client, Group, Chain, Brand, Subzone, Estimate, Invoice, Payment).</li>
+        <li><strong>Frontend</strong>: React 18 UI built with Vite and Bootstrap 5.</li>
+        <li><strong>Security</strong>: Stateless JWT Authentication via Spring Security.</li>
+    </ul>
+
+    <h3>How to Use the Application</h3>
+    
+    <h4>1. Registration</h4>
+    <ul>
+        <li>Navigate to the <code>/register</code> web page.</li>
+        <li>Fill out your Full Name, Email, Password, and select a Role (Admin / Sales Person).</li>
+        <li>Submit the form. Upon success, you will be redirected to the Login page.</li>
+    </ul>
+
+    <h4>2. Login</h4>
+    <ul>
+        <li>Navigate to <code>/login</code>.</li>
+        <li>Enter your registered Email and Password.</li>
+        <li>Upon successful authentication, the server generates a secure JWT token, and you are directed to the secure Dashboard.</li>
+    </ul>
+
+    <h4>3. Dashboard Navigation</h4>
+    <ul>
+        <li>The Dashboard reads your Profile information and greets you dynamically.</li>
+        <li>It displays varying UI blocks depending on whether you logged in as an <strong>Admin</strong> or a <strong>Sales Person</strong>.</li>
+        <li>Clicking <strong>Logout</strong> instantly revokes your local session and forces you back to the login screen, satisfying secure session management requirements.</li>
+    </ul>
+
+</body>
+</html>
